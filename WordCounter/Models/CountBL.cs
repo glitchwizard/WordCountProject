@@ -26,22 +26,22 @@ namespace WordCounter.Models {
             return _sentance;
         }
 
-        public string wordCount(string wordToFind, string sentanceToCheck) { 
-            Console.WriteLine("This is wordToFind: {0}", wordToFind);
-            Console.WriteLine("This is sentanceToCheck: {0}", sentanceToCheck);
+        public string wordCount() { 
+            string wordToFind = this._word;
+            string sentanceToCheck = this._sentance;
 
-            wordToFind = wordToFind.ToUpper();
-            sentanceToCheck = sentanceToCheck.ToUpper();
-            Console.WriteLine("This is wordToFind after ToUpper: {0}", wordToFind);
-            Console.WriteLine("This is sentanceToCheck after ToUpper: {0}", sentanceToCheck);
+            string wordToFindUpper = wordToFind.ToUpper();
+            string sentanceToCheckUpper = sentanceToCheck.ToUpper();
 
-            string[] sentanceArray = sentanceToCheck.Split(' ');
+            string[] sentanceArray = sentanceToCheckUpper.Split(' ');
             foreach (var i in sentanceArray) {
                 Console.WriteLine("This is an item in sentanceArray: {0}", i); 
+                // if (i == wordToFindUpper)
             }
-            
 
-            return "wordCount has ended";
+            string output = "Your word " + wordToFind + " was found {1} times in the sentance '" + sentanceToCheck + "'";
+            
+            return output;
         }
 
     }

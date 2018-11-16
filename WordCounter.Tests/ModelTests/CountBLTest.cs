@@ -22,7 +22,7 @@ namespace WordCounter.Tests {
 
         [TestMethod]
         public void IsCapturingWordAndSentance_CapturedAsData_String () {
-            CountBL testCountBL = new CountBL ("Cathedral", "Hey there's a good looking Cathedral");
+            CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
             string testWord = "Cathedral";
             string testSentance = "Hey there's a good looking Cathedral";
 
@@ -32,9 +32,9 @@ namespace WordCounter.Tests {
 
         [TestMethod]
         public void wordCountIsRunning_ExecutionOfMethod_String () {
-            CountBL testCountBL = new CountBL ("Cathedral", "Hey there's a good looking Cathedral");
+            CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
 
-            Assert.AreEqual ("wordCount has ended", testCountBL.wordCount (testCountBL.GetWord (), testCountBL.GetSentance ()));
+            Assert.AreEqual ("Your word Cathedral was found {1} times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
         }
     }
 }
