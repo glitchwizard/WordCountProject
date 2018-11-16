@@ -24,7 +24,7 @@ namespace WordCounter.Tests {
         public void IsCapturingWordAndSentance_CapturedAsData_String () {
             CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
             string testWord = "Cathedral";
-            string testSentance = "Hey there's a good looking Cathedral";
+            string testSentance = "Hey, there's a good looking Cathedral";
 
             Assert.AreEqual (testWord, testCountBL.GetWord ());
             Assert.AreEqual (testSentance, testCountBL.GetSentance ());
@@ -34,7 +34,7 @@ namespace WordCounter.Tests {
         public void wordCountIsRunning_ExecutionOfMethod_String () {
             CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
 
-            Assert.AreEqual ("Your word Cathedral was found {1} times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
+            Assert.AreEqual ("Your word Cathedral was found 1 times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
         }
 
         [TestMethod]
@@ -43,20 +43,22 @@ namespace WordCounter.Tests {
             string sentance = "i";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 1 + "times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
 
-                [TestMethod]
+        [TestMethod]
         public void FindOneWordInSentance_FindASingleWordMultipleTimes_String () {
             string word = "I";
             string sentance = "Hello, I am cool, I think so at least.";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 2 + "times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word + " was found " + 2 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
+
+
     }
 }

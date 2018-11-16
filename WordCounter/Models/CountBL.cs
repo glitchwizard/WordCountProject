@@ -42,7 +42,7 @@ namespace WordCounter.Models {
                 }
             }
 
-            string output = "Your word " + wordToFind + " was found " + wordCount + "times in the sentance '" + sentanceToCheck + "'";
+            string output = "Your word " + wordToFind + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
             
             return output;
         }
