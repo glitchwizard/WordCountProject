@@ -1,22 +1,27 @@
-namespace WordCounter.Models
-{
-  public class CountBL
-  {
-    private string _word;
+namespace WordCounter.Models {
+    public class CountBL {
+        private string _word;
+        private string _sentance;
 
-    public CountBL()
-    {
-      
-    }
+        public CountBL () {
 
-    public CountBL(string word1) 
-    {
-    _word = word1;
-    }
+        }
 
-    public string GetWord() 
-    {
-      return _word;
+        public CountBL (string word) {
+            _word = word;
+        }
+
+        public CountBL (string word, string sentance) {
+            _word = word;
+            _sentance = sentance;
+        }
+
+        public string GetWord () {
+            return _word;
+        }
+
+        public string GetSentance() {
+            return _sentance;
+        }
     }
-  }
 }

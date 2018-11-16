@@ -22,5 +22,16 @@ namespace WordCounter.Tests
 
           Assert.AreEqual(testArgument, testCountBL.GetWord());
         }
+
+    [TestMethod]
+        public void IsCapturingWordAndSentance_CapturedAsData_String()
+        {
+          CountBL testCountBL = new CountBL("Cathedral", "Hey there's a good looking Cathedral");
+          string testWord = "Cathedral" ;
+          string testSentance = "Hey there's a good looking Cathedral";
+
+          Assert.AreEqual(testWord, testCountBL.GetWord());
+          Assert.AreEqual(testSentance, testCountBL.GetSentance());
+        }
   }
 }
