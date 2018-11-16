@@ -41,9 +41,15 @@ namespace WordCounter.Models {
                 if (i == wordToFindUpper) {
                     wordCount++;
                 } 
-                // else if ( i != wordToFindUpper) {
-
-                // }
+                else if ( i != wordToFindUpper) {
+                    char[] charArray = i.toCharArray();
+                    char c = 'A';
+                    foreach (var j in charArray)
+                    while (c <= 'z') {
+                        if (j == i)
+                        c++;
+                    }
+                }
             }
 
             string output = "Your word " + wordToFind + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
