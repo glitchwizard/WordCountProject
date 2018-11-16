@@ -1,4 +1,4 @@
-*.dll
-*.pdb
-*.cache
+**.dll
+**.pdb
+**.cache
 .vscode/settings.json

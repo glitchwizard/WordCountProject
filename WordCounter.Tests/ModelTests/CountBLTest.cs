@@ -58,7 +58,15 @@ namespace WordCounter.Tests {
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
+        [TestMethod]
+        public void AccountForPunctuation_IncludeWordsThatMayHavePunctuation_String () {
+            string word = "Cool";
+            string sentance = "Cool!";
+            CountBL testCountBL = new CountBL (word, sentance);
 
+            string testAnswer = "Your word " + word + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
+            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+        }
     }
 }

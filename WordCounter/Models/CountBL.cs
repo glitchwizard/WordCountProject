@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter.Models {
     public class CountBL {
@@ -37,17 +38,32 @@ namespace WordCounter.Models {
             string[] sentanceArray = sentanceToCheckUpper.Split(' ');
             int wordCount = 0;
 
-            foreach (var i in sentanceArray) { 
+            foreach (string i in sentanceArray) { 
                 if (i == wordToFindUpper) {
                     wordCount++;
                 } 
                 else if ( i != wordToFindUpper) {
-                    char[] charArray = i.toCharArray();
-                    char c = 'A';
-                    foreach (var j in charArray)
-                    while (c <= 'z') {
-                        if (j == i)
-                        c++;
+                    char[] charArray = i.ToCharArray();
+                    List<char> wordListWithoutPunctuation = new List<char>{};
+
+                    foreach (char j in charArray) {
+                        char c = 'A';
+                        char d = 'a';
+                        while (c <= 'Z' && d <= 'z') {
+                            if (j == c || j == d) {
+                                System.Console.WriteLine("j: {0} || i: {1}", j, i);
+                                wordListWithoutPunctuation.Add(j);
+                                string wordWithoutPunctuationToAssembled = string.Join("", wordListWithoutPunctuation.ToArray());
+                                System.Console.WriteLine("This is the word without punctuation: " + wordWithoutPunctuationToAssembled);
+                                if (wordWithoutPunctuationToAssembled == i && wordWithoutPunctuationToAssembled.Length == i.Length){
+                                    wordCount++;
+                                }
+
+                            } 
+
+                            c++;
+                            d++;
+                        }
                     }
                 }
             }
