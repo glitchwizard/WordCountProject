@@ -1,6 +1,6 @@
 using  System;
 
-namespace  seedProject
+namespace  WordCounter
 {
   public class Program
   {
