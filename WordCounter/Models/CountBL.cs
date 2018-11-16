@@ -46,8 +46,6 @@ namespace WordCounter.Models {
                     char[] charArray = wordBeingChecked.ToCharArray();
                     List<char> wordListWithoutPunctuation = new List<char>{};
                     char lastChar = wordBeingChecked[wordBeingChecked.Length-1];
-                    // System.Console.WriteLine("This is wordBeingChecked: " + wordBeingChecked);
-                    // System.Console.WriteLine("This is lastChar: " + lastChar);
 
                     foreach (char j in charArray) {
                         char c = 'A';
@@ -57,15 +55,9 @@ namespace WordCounter.Models {
                             if (j == c || j == d) {
                                 wordListWithoutPunctuation.Add(j);
                                 string wordWithoutPunctuationToAssembled = string.Join("", wordListWithoutPunctuation.ToArray());
-                                
-                                // System.Console.WriteLine("");
-                                // System.Console.WriteLine("wordWithoughPunctuationToAssembled: " + wordWithoutPunctuationToAssembled);
-                                // System.Console.WriteLine("wordBeingChecked: " + wordBeingChecked);
-                                // System.Console.WriteLine("wordToFindUpper: " + wordToFindUpper);
 
                                 if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length)
                                 {
-                                    // System.Console.WriteLine( "this is Char.IsPunctuation(lastChar): " + Char.IsPunctuation(lastChar));
                                     if (Char.IsPunctuation(lastChar) == true) {
                                         wordCount++;
                                     }

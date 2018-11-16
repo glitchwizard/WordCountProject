@@ -10,27 +10,27 @@ _This will take the input of a user for a single word, then see if that word is 
 
 ## Specs
 
-* Take a single word as a string from a user
+1. Take a single word as a string from a user
     * Input: "Cathedral"
     * Output: string is captured by object
     Input Selection Methodology: A single word string is as simple as it can be. 
 
-* Take a single sentance from a user 
+2. Take a single sentance from a user 
     * Input: "Wow what a cool cathedral!"
     * Output: string is captured by object
     Input Selection Methodology: A string input by the user is as simple as it can be. 
 
-* Search the sentance for # of instances of the single word, and output the # to the user.
+3. Search the sentance for # of instances of the single word, and output the # to the user.
     * Input: Word - "Cathedral", Sentance - "Wow what a cool cathedral!"
     * Output: "Your word was found 1 time in the sentance you provided"
     Input Selection Methodology: Using two inputs provided by the object properties is as simple as it can get while using objects.
 
-* Make sure the word does not find mismatches such as CAT in CAThedral
+4. Make sure the word does not find mismatches such as CAT in CAThedral
     * Input: Word - "Cat", Sentance - "Wow what a cool cathedral!"
     * Output: "Your word was not found in the sentance"
     Input Selection Methodology: Choosing words that could be found in larger words is as simple as it could get given the requirements of the lesson.
 
-* Words with punctuation concatenated onto it need to be handled. 
+5. Words with punctuation concatenated onto it need to be counted as well. 
     * Input: Word - "Cool!", Sentance "Cool!"
     * Output: "Your word was found 1 time in the sentance you provided"
 
