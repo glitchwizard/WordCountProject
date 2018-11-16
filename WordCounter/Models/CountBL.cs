@@ -51,16 +51,13 @@ namespace WordCounter.Models {
                         char d = 'a';
                         while (c <= 'Z' && d <= 'z') {
                             if (j == c || j == d) {
-                                System.Console.WriteLine("j: {0} || i: {1}", j, i);
                                 wordListWithoutPunctuation.Add(j);
                                 string wordWithoutPunctuationToAssembled = string.Join("", wordListWithoutPunctuation.ToArray());
-                                System.Console.WriteLine("This is the word without punctuation: " + wordWithoutPunctuationToAssembled);
-                                if (wordWithoutPunctuationToAssembled == i && wordWithoutPunctuationToAssembled.Length == i.Length){
+                            
+                            if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordWithoutPunctuationToAssembled.Length == (wordToFindUpper.Length)){
                                     wordCount++;
                                 }
-
                             } 
-
                             c++;
                             d++;
                         }
@@ -68,7 +65,7 @@ namespace WordCounter.Models {
                 }
             }
 
-            string output = "Your word " + wordToFind + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
+            string output = "Your word " + wordToFind.ToLower() + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
             
             return output;
         }
