@@ -34,7 +34,7 @@ namespace WordCounter.Tests {
         public void wordCountIsRunning_ExecutionOfMethod_String () {
             CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
 
-            Assert.AreEqual ("Your word Cathedral was found 1 times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
+            Assert.AreEqual ("Your word cathedral was found 1 times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace WordCounter.Tests {
             string sentance = "i";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 1 + " times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
@@ -54,7 +54,7 @@ namespace WordCounter.Tests {
             string sentance = "Hello, I am cool, I think so at least.";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 2 + " times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 2 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
@@ -64,7 +64,7 @@ namespace WordCounter.Tests {
             string sentance = "Cool!";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 1 + " times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
@@ -75,7 +75,29 @@ namespace WordCounter.Tests {
             string sentance = "Cool! This is so cool, don't you think it's cool?";
             CountBL testCountBL = new CountBL (word, sentance);
 
-            string testAnswer = "Your word " + word + " was found " + 3 + " times in the sentance '" + sentance + "'";
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 3 + " times in the sentance '" + sentance + "'";
+
+            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            
+        }
+        [TestMethod]
+        public void SmallerWordwithinAword_ExcludeSmallerWordsWithinWords_String () {
+            string word = "cat";
+            string sentance = "cathedral";
+            CountBL testCountBL = new CountBL (word, sentance);
+
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 0 + " times in the sentance '" + sentance + "'";
+
+            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            
+        }
+        [TestMethod]
+        public void wordOneCharSmallerThanWhatsBeingChecked_NoWordCountAdded_String () {
+            string word = "rat";
+            string sentance = "rate";
+            CountBL testCountBL = new CountBL (word, sentance);
+
+            string testAnswer = "Your word " + word.ToLower() + " was found " + 0 + " times in the sentance '" + sentance + "'";
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
             
