@@ -3,7 +3,7 @@ using WordCounter.Models;
 
 namespace WordCounter {
     public class Program {
-        public static void Main (string[] args) {
+        public static void Main () {
             System.Console.WriteLine("");
             System.Console.WriteLine("");
 
@@ -18,8 +18,10 @@ namespace WordCounter {
             System.Console.WriteLine("");
 
             Console.WriteLine(newWordToFind.wordCount());
-            
+
             System.Console.WriteLine("");
+            System.Console.WriteLine("Thanks for playing, please press a key to end this program");
+            Console.ReadKey();
         }
     }
 }

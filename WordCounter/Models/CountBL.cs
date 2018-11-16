@@ -43,9 +43,13 @@ namespace WordCounter.Models {
                     wordCount++;
                 } 
                 else if ( wordBeingChecked != wordToFindUpper) {
+
                     char[] charArray = wordBeingChecked.ToCharArray();
-                    List<char> wordListWithoutPunctuation = new List<char>{};
+
+                    List<char> wordTurnedToListWithoutPunctuation = new List<char>{};
+
                     char lastChar = wordBeingChecked[wordBeingChecked.Length-1];
+
 
                     foreach (char j in charArray) {
                         char c = 'A';
@@ -53,8 +57,8 @@ namespace WordCounter.Models {
 
                         while (c <= 'Z' && d <= 'z') {
                             if (j == c || j == d) {
-                                wordListWithoutPunctuation.Add(j);
-                                string wordWithoutPunctuationToAssembled = string.Join("", wordListWithoutPunctuation.ToArray());
+                                wordTurnedToListWithoutPunctuation.Add(j);
+                                string wordWithoutPunctuationToAssembled = string.Join("", wordTurnedToListWithoutPunctuation.ToArray());
 
                                 if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length)
                                 {
