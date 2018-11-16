@@ -7,10 +7,10 @@ namespace WordCounter {
             Console.WriteLine("Hello, please input a word to find in a sentance: ");
             string userInputWord = Console.ReadLine();
             Console.WriteLine("");
-            Console.WriteLine("Thank you, please input a sentance to count how many times this word appears: ")
+            Console.WriteLine("Thank you, please input a sentance to count how many times this word appears: ");
             string userInputSentance = Console.ReadLine();
             CountBL newWordToFind = new CountBL(userInputWord, userInputSentance);
-            newWordToFind.wordCount();
+            Console.WriteLine(newWordToFind.wordCount());
         }
     }
 }
