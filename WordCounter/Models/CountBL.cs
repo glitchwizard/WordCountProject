@@ -65,7 +65,7 @@ namespace WordCounter.Models {
 
                                 if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length)
                                 {
-                                    System.Console.WriteLine( "this is Char.IsPunctuation(lastChar): " + Char.IsPunctuation(lastChar));
+                                    // System.Console.WriteLine( "this is Char.IsPunctuation(lastChar): " + Char.IsPunctuation(lastChar));
                                     if (Char.IsPunctuation(lastChar) == true) {
                                         wordCount++;
                                     }
