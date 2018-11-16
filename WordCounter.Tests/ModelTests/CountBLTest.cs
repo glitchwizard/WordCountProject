@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using WordCounter.Models;
 
 namespace WordCounter.Tests
 {
@@ -13,13 +14,13 @@ namespace WordCounter.Tests
 
           Assert.AreEqual(typeof(CountBL), testCountBL.GetType());
         }
-    // [TestMethod]
-    //     public void IsInputWord_CapturedAsData_String()
-    //     {
-    //       CountBL testCountBL = new CountBL("Cathedral");
-    //       string testArgument = "Cathedral" 
+    [TestMethod]
+        public void IsInputWord_CapturedAsData_String()
+        {
+          CountBL testCountBL = new CountBL("Cathedral");
+          string testArgument = "Cathedral" ;
 
-    //       Assert.AreEqual(false, testCountBL.word);
-    //     }
+          Assert.AreEqual(testArgument, testCountBL.GetWord());
+        }
   }
 }
