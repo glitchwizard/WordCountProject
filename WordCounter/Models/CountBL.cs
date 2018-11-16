@@ -46,6 +46,7 @@ namespace WordCounter.Models {
                     char[] charArray = wordBeingChecked.ToCharArray();
                     List<char> wordListWithoutPunctuation = new List<char>{};
                     int letterIndex = 0;
+                    System.Console.WriteLine("EARLY: This is the count of the wordListWithoutPunctuation: "+ wordListWithoutPunctuation.Count);
 
                     foreach (char j in charArray) {
                         char c = 'A';
@@ -60,9 +61,10 @@ namespace WordCounter.Models {
                                 System.Console.WriteLine("wordWithoughPunctuationToAssembled: " + wordWithoutPunctuationToAssembled);
                                 System.Console.WriteLine("wordBeingChecked: " + wordBeingChecked);
                                 System.Console.WriteLine("wordToFindUpper: " + wordToFindUpper);
-                                
+                                System.Console.WriteLine("This is the count of the wordListWithoutPunctuation: "+ wordListWithoutPunctuation.Count);
 
-                                if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length && wordListWithoutPunctuation[wordListWithoutPunctuation.Length] != j )
+
+                                if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length)
                                 {
                                     wordCount++;
                                 } 
@@ -73,7 +75,7 @@ namespace WordCounter.Models {
                             c++;
                             d++;
                         }
-                        letterIndex++
+                        letterIndex++;
                     }
                 }
             }
