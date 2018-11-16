@@ -45,8 +45,9 @@ namespace WordCounter.Models {
                 else if ( wordBeingChecked != wordToFindUpper) {
                     char[] charArray = wordBeingChecked.ToCharArray();
                     List<char> wordListWithoutPunctuation = new List<char>{};
-                    int letterIndex = 0;
-                    System.Console.WriteLine("EARLY: This is the count of the wordListWithoutPunctuation: "+ wordListWithoutPunctuation.Count);
+                    char lastChar = wordBeingChecked[wordBeingChecked.Length-1];
+                    // System.Console.WriteLine("This is wordBeingChecked: " + wordBeingChecked);
+                    // System.Console.WriteLine("This is lastChar: " + lastChar);
 
                     foreach (char j in charArray) {
                         char c = 'A';
@@ -57,25 +58,23 @@ namespace WordCounter.Models {
                                 wordListWithoutPunctuation.Add(j);
                                 string wordWithoutPunctuationToAssembled = string.Join("", wordListWithoutPunctuation.ToArray());
                                 
-                                System.Console.WriteLine("");
-                                System.Console.WriteLine("wordWithoughPunctuationToAssembled: " + wordWithoutPunctuationToAssembled);
-                                System.Console.WriteLine("wordBeingChecked: " + wordBeingChecked);
-                                System.Console.WriteLine("wordToFindUpper: " + wordToFindUpper);
-                                System.Console.WriteLine("This is the count of the wordListWithoutPunctuation: "+ wordListWithoutPunctuation.Count);
-
+                                // System.Console.WriteLine("");
+                                // System.Console.WriteLine("wordWithoughPunctuationToAssembled: " + wordWithoutPunctuationToAssembled);
+                                // System.Console.WriteLine("wordBeingChecked: " + wordBeingChecked);
+                                // System.Console.WriteLine("wordToFindUpper: " + wordToFindUpper);
 
                                 if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length)
                                 {
-                                    wordCount++;
+                                    System.Console.WriteLine( "this is Char.IsPunctuation(lastChar): " + Char.IsPunctuation(lastChar));
+                                    if (Char.IsPunctuation(lastChar) == true) {
+                                        wordCount++;
+                                    }
+                                    
                                 } 
-                                // if (wordWithoutPunctuationToAssembled == wordToFindUpper && wordBeingChecked.Length-1 == wordToFindUpper.Length){
-                                //     wordCount++;
-                                // } 
                             } 
                             c++;
                             d++;
                         }
-                        letterIndex++;
                     }
                 }
             }
