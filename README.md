@@ -30,8 +30,6 @@ _This will take the input of a user for a single word, then see if that word is 
     * Output: "Your word was not found in the sentance"
     Input Selection Methodology: Choosing words that could be found in larger words is as simple as it could get given the requirements of the lesson.
 
-
-
 ## Setup/Installation Requirements
 
 * Will need a compiler for C#

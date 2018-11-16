@@ -1,3 +1,5 @@
+using System;
+
 namespace WordCounter.Models {
     public class CountBL {
         private string _word;
@@ -23,5 +25,24 @@ namespace WordCounter.Models {
         public string GetSentance() {
             return _sentance;
         }
+
+        public string wordCount(string wordToFind, string sentanceToCheck) { 
+            Console.WriteLine("This is wordToFind: {0}", wordToFind);
+            Console.WriteLine("This is sentanceToCheck: {0}", sentanceToCheck);
+
+            wordToFind = wordToFind.ToUpper();
+            sentanceToCheck = sentanceToCheck.ToUpper();
+            Console.WriteLine("This is wordToFind after ToUpper: {0}", wordToFind);
+            Console.WriteLine("This is sentanceToCheck after ToUpper: {0}", sentanceToCheck);
+
+            string[] sentanceArray = sentanceToCheck.Split(' ');
+            foreach (var i in sentanceArray) {
+                Console.WriteLine("This is an item in sentanceArray: {0}", i); 
+            }
+            
+
+            return "wordCount has ended";
+        }
+
     }
 }
