@@ -36,5 +36,16 @@ namespace WordCounter.Tests {
 
             Assert.AreEqual ("Your word Cathedral was found {1} times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
         }
+
+        [TestMethod]
+        public void FindOneSingleLetter_FindASingleLetter_String () {
+            string word = "i";
+            string sentance = "i";
+            CountBL testCountBL = new CountBL (word, sentance);
+
+            string testAnswer = "Your word " + word + " was found " + 1 + "times in the sentance '" + sentance + "'";
+
+            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+        }
     }
 }

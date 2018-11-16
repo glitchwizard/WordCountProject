@@ -34,15 +34,17 @@ namespace WordCounter.Models {
             string sentanceToCheckUpper = sentanceToCheck.ToUpper();
 
             string[] sentanceArray = sentanceToCheckUpper.Split(' ');
-            foreach (var i in sentanceArray) {
-                Console.WriteLine("This is an item in sentanceArray: {0}", i); 
-                // if (i == wordToFindUpper)
+            int wordCount = 0;
+
+            foreach (var i in sentanceArray) { 
+                if (i == wordToFindUpper) {
+                    wordCount++;
+                }
             }
 
-            string output = "Your word " + wordToFind + " was found {1} times in the sentance '" + sentanceToCheck + "'";
+            string output = "Your word " + wordToFind + " was found " + wordCount + "times in the sentance '" + sentanceToCheck + "'";
             
             return output;
         }
-
     }
 }
