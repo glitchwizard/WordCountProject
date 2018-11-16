@@ -9,11 +9,9 @@ namespace WordCounter.Tests
     [TestMethod]
         public void DoesClassInstantiate_InstantitionSuccessful_NewObj()
         {
-          CountBL testCountBL = new CountBL("Cathedral");
-          string testArgument = "Cathedral" 
-          Console.Writeline("This is the data type of the object: {0)", typeof(testCountBL))
+          CountBL testCountBL = new CountBL();
 
-          Assert.AreEqual(true, typeof(testCountBL);
+          Assert.AreEqual(typeof(CountBL), testCountBL.GetType());
         }
     // [TestMethod]
     //     public void IsInputWord_CapturedAsData_String()
