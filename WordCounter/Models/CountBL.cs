@@ -27,6 +27,7 @@ namespace WordCounter.Models {
         }
 
         public string wordCount() { 
+
             string wordToFind = this._word;
             string sentanceToCheck = this._sentance;
 
@@ -39,7 +40,10 @@ namespace WordCounter.Models {
             foreach (var i in sentanceArray) { 
                 if (i == wordToFindUpper) {
                     wordCount++;
-                }
+                } 
+                // else if ( i != wordToFindUpper) {
+
+                // }
             }
 
             string output = "Your word " + wordToFind + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
