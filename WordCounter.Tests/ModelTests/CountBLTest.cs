@@ -47,5 +47,16 @@ namespace WordCounter.Tests {
 
             Assert.AreEqual (testAnswer, testCountBL.wordCount());
         }
+
+                [TestMethod]
+        public void FindOneWordInSentance_FindASingleWordMultipleTimes_String () {
+            string word = "I";
+            string sentance = "Hello, I am cool, I think so at least.";
+            CountBL testCountBL = new CountBL (word, sentance);
+
+            string testAnswer = "Your word " + word + " was found " + 2 + "times in the sentance '" + sentance + "'";
+
+            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+        }
     }
 }
