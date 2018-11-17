@@ -54,6 +54,7 @@ namespace WordCounter.Models {
                     foreach (char j in charArray) {
                         char c = 'A';
                         char d = 'a';
+                        System.Console.WriteLine("This is the current Char: " + j);
 
                         while (c <= 'Z' && d <= 'z') {
                             if (j == c || j == d) {
