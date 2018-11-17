@@ -76,7 +76,7 @@ namespace WordCounter.Models {
             }
 
             string output = "Your word " + wordToFind.ToLower() + " was found " + wordCount + " times in the sentance '" + sentanceToCheck + "'";
-            
+            // ↑ ↑ ↓ ↓ ← → ← → B A
             return output;
         }
     }
