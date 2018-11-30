@@ -1,20 +1,10 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
-</head>
-<body>
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
 
-    @{
-        ViewData["Title"] = "Home Page";
-    }
+<h1>Welcome to the word counter.</h1>
 
-    <h1>Welcome to the word counter.</h1>
+<p><h2> This is a game that will find how many times a word you input will appear in a sentance you give it.</h2></p>
 
-    <p><h2> This is a game that will find how many times a word you input will appear in a sentance you give it.</h2></p>
-
-    <p><a href="/wordcounter/">Please click here to begin</a></p>
-</body>
-
-</html>;
+<p><a href="/wordcounter/">Please click here to begin</a></p>
