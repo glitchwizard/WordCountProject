@@ -11,6 +11,7 @@ namespace WordCounter.Tests
     [TestClass]
     public class WordCountControllerTests
     {
+        // WORDCOUNT CONTROLLER INDEX TEST METHODS
         [TestMethod]
         public void Index_ReturnsAViewResult_True()
         {
@@ -51,6 +52,21 @@ namespace WordCounter.Tests
             //Assert
             Assert.IsInstanceOfType(result, typeof(WordCount));
         }
+
+        // WORDCOUNT CONTROLLER NEW TEST METHODS
+        [TestMethod]
+        public void New_ReturnsAViewResult_True()
+        {
+            //Arrange
+            WordCountController controller = new WordCountController();
+
+            //Act
+            ActionResult newView = controller.New();
+
+            //Assert
+            Assert.IsInstanceOfType(newView, typeof(ViewResult));
+        }
+
 
     }
 }

@@ -18,11 +18,12 @@ namespace WordCounter.Controllers
             return View("Index", newWordToFind);
         }
 
-        //[HttpGet("/wordcounter/new")]
-        //public ActionResult New()
-        //{
-        //    return View();
-        //}
+        [HttpGet("/wordcounter/new")]
+        public ActionResult New()
+        {
+
+            return new EmptyResult();
+        }
 
         //[HttpPost("/wordcounter")]
         //public ActionResult New(string userInputWord, string userInputSentance)
