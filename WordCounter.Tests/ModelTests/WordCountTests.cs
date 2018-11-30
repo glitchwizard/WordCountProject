@@ -4,7 +4,7 @@ using WordCounter.Models;
 
 namespace WordCounter.Tests {
     [TestClass]
-    public class CounterTest {
+    public class WordCounterTest {
         [TestMethod]
         public void DoesClassInstantiate_InstantitionSuccessful_NewObj () {
             WordCount testCounter = new WordCount ();

@@ -8,12 +8,9 @@ using System;
 namespace WordCounter.Tests
 {
     [TestClass]
-    public class HomeControllerTests : IDisposable
-    {
-        public void Dispose()
+    public class HomeControllerTests
         {
-            //WordCount.ClearAll();
-        }
+
         [TestMethod]
         public void Index_ReturnsAViewResult_True()
         {
@@ -27,17 +24,9 @@ namespace WordCounter.Tests
             Assert.IsInstanceOfType(indexView, typeof(ViewResult));
 
         }
-
-
-
         //Lina, do I need to test anything else if it's a splash page for Home index?
 
     }
-    
-    //Arrange
-
-    //Act
-
-    //Assert
+   
 }
 
