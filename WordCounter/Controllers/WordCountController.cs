@@ -11,6 +11,7 @@ namespace WordCounter.Controllers
 {
     public class WordCountController : Controller
     {
+        [Produces("text/html")]
         [HttpGet("/wordcounter")]
         public ActionResult Index()
         {
@@ -18,12 +19,14 @@ namespace WordCounter.Controllers
             return View();
         }
 
+        [Produces("text/html")]
         [HttpGet("/wordcounter/new")]
         public ActionResult New()
         {
             return View();
         }
 
+        [Produces("text/html")]
         [HttpPost("/wordcounter")]
         public ActionResult New(string userInputWord, string userInputSentance)
         {
