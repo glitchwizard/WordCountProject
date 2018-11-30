@@ -4,102 +4,102 @@ using WordCounter.Models;
 
 namespace WordCounter.Tests {
     [TestClass]
-    public class CountBLTest {
+    public class CounterTest {
         [TestMethod]
         public void DoesClassInstantiate_InstantitionSuccessful_NewObj () {
-            CountBL testCountBL = new CountBL ();
+            Counter testCounter = new Counter ();
 
-            Assert.AreEqual (typeof (CountBL), testCountBL.GetType ());
+            Assert.AreEqual (typeof (Counter), testCounter.GetType ());
         }
 
         [TestMethod]
         public void IsInputWord_CapturedAsData_String () {
-            CountBL testCountBL = new CountBL ("Cathedral");
+            Counter testCounter = new Counter ("Cathedral");
             string testArgument = "Cathedral";
 
-            Assert.AreEqual (testArgument, testCountBL.GetWord ());
+            Assert.AreEqual (testArgument, testCounter.GetWord ());
         }
 
         [TestMethod]
         public void IsCapturingWordAndSentance_CapturedAsData_String () {
-            CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
+            Counter testCounter = new Counter ("Cathedral", "Hey, there's a good looking Cathedral");
             string testWord = "Cathedral";
             string testSentance = "Hey, there's a good looking Cathedral";
 
-            Assert.AreEqual (testWord, testCountBL.GetWord ());
-            Assert.AreEqual (testSentance, testCountBL.GetSentance ());
+            Assert.AreEqual (testWord, testCounter.GetWord ());
+            Assert.AreEqual (testSentance, testCounter.GetSentance ());
         }
 
         [TestMethod]
         public void wordCountIsRunning_ExecutionOfMethod_String () {
-            CountBL testCountBL = new CountBL ("Cathedral", "Hey, there's a good looking Cathedral");
+            Counter testCounter = new Counter ("Cathedral", "Hey, there's a good looking Cathedral");
 
-            Assert.AreEqual ("Your word cathedral was found 1 times in the sentance 'Hey, there's a good looking Cathedral'", testCountBL.wordCount());
+            Assert.AreEqual ("Your word cathedral was found 1 times in the sentance 'Hey, there's a good looking Cathedral'", testCounter.wordCount());
         }
 
         [TestMethod]
         public void FindOneSingleLetter_FindASingleLetter_String () {
             string word = "i";
             string sentance = "i";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
         }
 
         [TestMethod]
         public void FindOneWordInSentance_FindASingleWordMultipleTimes_String () {
             string word = "I";
             string sentance = "Hello, I am cool, I think so at least.";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 2 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
         }
         [TestMethod]
         public void AccountForPunctuationSingleWord_IncludeWordsThatMayHavePunctuation_String () {
             string word = "Cool";
             string sentance = "Cool!";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 1 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
         }
 
         [TestMethod]
         public void AccountForPunctuationInSentance_IncludeWordsThatMayHavePunctuation_String () {
             string word = "Cool";
             string sentance = "Cool! This is so cool, don't you think it's cool?";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 3 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
             
         }
         [TestMethod]
         public void SmallerWordwithinAword_ExcludeSmallerWordsWithinWords_String () {
             string word = "cat";
             string sentance = "cathedral";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 0 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
             
         }
         [TestMethod]
         public void wordOneCharSmallerThanWhatsBeingChecked_NoWordCountAdded_String () {
             string word = "rat";
             string sentance = "rate";
-            CountBL testCountBL = new CountBL (word, sentance);
+            Counter testCounter = new Counter (word, sentance);
 
             string testAnswer = "Your word " + word.ToLower() + " was found " + 0 + " times in the sentance '" + sentance + "'";
 
-            Assert.AreEqual (testAnswer, testCountBL.wordCount());
+            Assert.AreEqual (testAnswer, testCounter.wordCount());
             
         }
     }
