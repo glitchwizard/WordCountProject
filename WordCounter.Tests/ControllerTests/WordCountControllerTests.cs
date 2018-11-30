@@ -39,5 +39,18 @@ namespace WordCounter.Tests
             Assert.AreEqual(result, "Index");
         }
 
+        [TestMethod]
+        public void Index_HasCorrectModelType_WordCountObject()
+        {
+            //Arrange
+            ViewResult indexView = new WordCountController().Index() as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(WordCount));
+        }
+
     }
 }
