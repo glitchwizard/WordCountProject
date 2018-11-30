@@ -14,8 +14,8 @@ namespace WordCounter.Controllers
         [HttpGet("/wordcounter")]
         public ActionResult Index()
         {
-            WordCount newWordToFind = new WordCount();
-            return View("Index", newWordToFind);
+            //WordCount newWordToFind = new WordCount();
+            return View();
         }
 
         [HttpGet("/wordcounter/new")]
@@ -25,9 +25,9 @@ namespace WordCounter.Controllers
         }
 
         [HttpPost("/wordcounter")]
-        public ActionResult New(string newWordToFind, string newSentanceToFindWordIn)
+        public ActionResult New(string userInputWord, string userInputSentance)
         {
-            WordCount newWordCountObj = new WordCount(newWordToFind, newSentanceToFindWordIn);
+            WordCount newWordCountObj = new WordCount(userInputWord, userInputSentance);
             return View("Index", newWordCountObj);
         }
 

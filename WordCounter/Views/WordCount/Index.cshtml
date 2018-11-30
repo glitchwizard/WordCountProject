@@ -6,7 +6,14 @@
 
 <h1>Word Counter</h1>
 
-@if (@Model.GetWord() == null)
+@if (@Model == null)
 {
+<h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
+} else if (@Model.GetWord() != null && @Model.GetSentance() != null)
+{
+<p>@Model.wordCount()</p>
 
+<p>Please click <a href="/wordcounter/new">here</a> to start the word counter again :) </p>
+} else {
+<h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
 }
