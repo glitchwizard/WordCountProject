@@ -2,19 +2,19 @@ using System;
 using System.Collections.Generic;
 
 namespace WordCounter.Models {
-    public class CountBL {
+    public class Counter {
         private string _word;
         private string _sentance;
 
-        public CountBL () {
+        public Counter () {
 
         }
 
-        public CountBL (string word) {
+        public Counter (string word) {
             _word = word;
         }
 
-        public CountBL (string word, string sentance) {
+        public Counter (string word, string sentance) {
             _word = word;
             _sentance = sentance;
         }
