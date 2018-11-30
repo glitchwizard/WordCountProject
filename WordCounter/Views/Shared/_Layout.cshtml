@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <div>
         @RenderBody()
+        <p></p>
+        @Html.Partial("Footer")
     </div>
 </body>
 </html>

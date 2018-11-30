@@ -1,9 +1,9 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     Layout = "_Layout";
+    ViewData["Title"] = "New Word Count";
 }
 
 <h1>Word Count Input</h1>
@@ -12,12 +12,13 @@
 
     <label for="userInputWord">Hello, please input a word to find in a sentance:</label>
     <input id="userInputWord" type="text" name="userInputWord">
+    <p></p>
 
     <label for="userInputSentance">Please input a sentance to count how many times this word appears: </label>
     <input id="userInputSentance" type="text" name="userInputSentance">
+    <p></p>
 
     <button type="submit">Click here to find the word count!</button>
 </form>
-
 </body>
 </html>

@@ -1,28 +1,27 @@
-﻿
-    @*
+﻿@*
 
-        For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-    *@
-    @{
-        Layout = "_Layout";
-    }
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "WordCount";
+}
 
-    <h1>Word Counter</h1>
+<h1>Word Counter</h1>
 
-    @if (@Model == null)
-    {
-        <h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
-    }
-    else if (@Model.GetWord() != null && @Model.GetSentance() != null)
-    {
-        <p>@Model.wordCount()</p>
+@if (@Model == null)
+{
+    <h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
+}
+else if (@Model.GetWord() != null && @Model.GetSentance() != null)
+{
+    <p>@Model.wordCount()</p>
 
-        <p>Please click <a href="/wordcounter/new">here</a> to start the word counter again :) </p>
-    }
-    else
-    {
-        <h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
-    }
-
+    <p>Please click <a href="/wordcounter/new">here</a> to start the word counter again :) </p>
+}
+else
+{
+    <h5>Please click <a href="/wordcounter/new">here</a> to start the word counter</h5>
+}
 </body>
 </html>
