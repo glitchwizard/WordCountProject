@@ -27,36 +27,45 @@ namespace WordCounter.Tests
 
         }
 
-        [TestMethod]
-        [TestCategory("WordCountIndexAction")]
-        public void Index_HasCorrectAction_WordcounterIndex()
-        {
-            //Arrange
-            WordCountController controller = new WordCountController();
-            ViewResult viewResult = controller.Index() as ViewResult;
+        //[TestMethod]
+        //[TestCategory("WordCountIndexAction")]
 
-            //Act
-            var result = viewResult.ViewName;
+        // ********* Upon further research, there is no way to test this method that would be within the scope of this class; 
+        // check this site for more info: https://stackoverflow.com/questions/8301797/get-view-name-where-viewresult-viewname-is-empty-string-for-unit-testing  ************
+         
+        //public void Index_HasCorrectAction_WordcounterIndex()
+        //{
+        //    //Arrange
 
-            //Assert
-            Assert.AreEqual(result, "Index");
-        }
+        //    WordCountController controller = new WordCountController();
+        //    ViewResult viewResult = controller.Index() as ViewResult;
 
-        [TestMethod]
-        [TestCategory("WordCountIndexAction")]
-        public void Index_HasCorrectModelType_WordCountObject()
-        {
-            //Arrange
-            ViewResult indexView = new WordCountController().Index() as ViewResult;
+        //    //Act
+        //    var result = viewResult.ViewName;
 
-            //Act
-            var result = indexView.ViewData.Model;
+        //    //Assert
+        //    Assert.AreEqual(result, "Index");
+        //}
 
-            //Assert
-            Assert.IsInstanceOfType(result, typeof(WordCount));
-        }
+        //[TestMethod]
+        //[TestCategory("WordCountIndexAction")]
+
+        //******* Same with this test as above, it's not possible since the splash page will never have a model passed to it. *********
+
+        //public void Index_HasCorrectModelType_WordCountObject()
+        //{
+        //    //Arrange
+        //    ViewResult indexView = new WordCountController().Index() as ViewResult;
+
+        //    //Act
+        //    var result = indexView.ViewData.Model;
+
+        //    //Assert
+        //    Assert.IsInstanceOfType(result, typeof(WordCount));
+        //}
 
         // WORDCOUNT CONTROLLER NEW TEST METHODS
+        
         [TestMethod]
         [TestCategory("WordCountNewAction")]
         public void New_ReturnsAViewResult_True()
