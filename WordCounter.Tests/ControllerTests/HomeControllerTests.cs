@@ -6,8 +6,21 @@ using WordCounter.Controllers;
 
 namespace WordCounter.Tests
 {
-    class HomeControllerTests
+    [TestClass]
+    public class HomeControllerTests
     {
-        
+        [TestMethod]
+        public void Index_ReturnsAViewResult_True()
+        {
+            //Arrange
+            HomeController controller = new HomeController();
+
+            //Act
+            ActionResult indexView = controller.Index();
+
+            //Assert
+            Assert.IsInstanceOfType(indexView, typeof(ViewResult));
+
+        }
     }
 }

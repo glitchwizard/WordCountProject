@@ -11,7 +11,7 @@ namespace WordCounter.Controllers
     public class WordCounterController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public ActionResult Index()
         {
             return View();
         }
