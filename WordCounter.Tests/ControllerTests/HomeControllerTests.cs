@@ -22,5 +22,7 @@ namespace WordCounter.Tests
             Assert.IsInstanceOfType(indexView, typeof(ViewResult));
 
         }
+
+        [Test]
     }
 }
