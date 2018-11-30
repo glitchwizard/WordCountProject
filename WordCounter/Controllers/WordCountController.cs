@@ -22,7 +22,7 @@ namespace WordCounter.Controllers
         public ActionResult New()
         {
 
-            return new EmptyResult();
+            return View();
         }
 
         //[HttpPost("/wordcounter")]
