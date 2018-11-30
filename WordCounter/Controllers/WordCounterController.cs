@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WordCounter.Controllers
 {
-    public class CounterController : Controller
+    public class WordCounterController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

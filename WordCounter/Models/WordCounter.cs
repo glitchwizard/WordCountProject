@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace WordCounter.Models {
+
     public class Counter {
         private string _word;
         private string _sentance;
