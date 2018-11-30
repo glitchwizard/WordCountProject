@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WordCounter.Controllers
 {
-    public class WordCounterController : Controller
+    public class WordCountController : Controller
     {
-        // GET: /<controller>/
+        [HttpGet("/wordcounter")]
         public ActionResult Index()
         {
             return View();

@@ -3,19 +3,20 @@ using System.Collections.Generic;
 
 namespace WordCounter.Models {
 
-    public class Counter {
+    public class WordCount {
         private string _word;
         private string _sentance;
 
-        public Counter () {
+
+        public WordCount () {
 
         }
 
-        public Counter (string word) {
+        public WordCount (string word) {
             _word = word;
         }
 
-        public Counter (string word, string sentance) {
+        public WordCount (string word, string sentance) {
             _word = word;
             _sentance = sentance;
         }
@@ -27,6 +28,11 @@ namespace WordCounter.Models {
         public string GetSentance() {
             return _sentance;
         }
+
+        //public static void ClearAll()
+        //{
+        //    _instances.Clear();
+        //}
 
         public string wordCount() { 
 
