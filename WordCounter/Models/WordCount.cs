@@ -28,11 +28,7 @@ namespace WordCounter.Models {
         public string GetSentance() {
             return _sentance;
         }
-
-        //public static void ClearAll()
-        //{
-        //    _instances.Clear();
-        //}
+       
 
         public string wordCount() { 
 

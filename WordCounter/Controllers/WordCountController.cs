@@ -21,16 +21,15 @@ namespace WordCounter.Controllers
         [HttpGet("/wordcounter/new")]
         public ActionResult New()
         {
-
             return View();
         }
 
-        //[HttpPost("/wordcounter")]
-        //public ActionResult New(string userInputWord, string userInputSentance)
-        //{
-        //    WordCount newWordToFind = new WordCount(userInputWord, userInputSentance);
-        //    return View("Index", newWordToFind);
-        //}
+        [HttpPost("/wordcounter")]
+        public ActionResult New(string newWordToFind, string newSentanceToFindWordIn)
+        {
+            WordCount newWordCountObj = new WordCount(newWordToFind, newSentanceToFindWordIn);
+            return View("Index", newWordCountObj);
+        }
 
     }
 }
