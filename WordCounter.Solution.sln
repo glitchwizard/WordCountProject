@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordCounter", "WordCounter\WordCounter.csproj", "{A21869FA-6D5A-4C3F-ACD8-F384E40F5757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Tests", "WordCounter.Tests\WordCounter.Tests.csproj", "{FA8D5EF1-1C72-4BAF-9ACE-97F6B1CFCE0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordCounter.Tests", "WordCounter.Tests\WordCounter.Tests.csproj", "{FA8D5EF1-1C72-4BAF-9ACE-97F6B1CFCE0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EA766FD-D699-4835-BD02-E2860A55C8AC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

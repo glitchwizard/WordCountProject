@@ -59,4 +59,4 @@ _Charley McGowan_
 
 *MIT*
 
-Copyright (c) 2015 **_Charley McGowan_**
+Copyright (c) 2018 **_Charley McGowan_**
